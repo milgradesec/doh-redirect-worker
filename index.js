@@ -4,7 +4,7 @@ addEventListener('fetch', event => {
 
 /**
  * Redirect request to other DoH endpoint
- * @param {Request} request 
+ * @param {Request} request
  */
 async function handleRequest(request) {
   const url = new URL(request.url)
