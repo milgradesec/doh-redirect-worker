@@ -23,7 +23,5 @@ async function handleRequest(request) {
     method: request.method,
     redirect: request.redirect
   })
-
-  const response = await fetch(newRequest)
-  return response
+  return await fetch(newRequest)
 }
