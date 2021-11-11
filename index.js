@@ -15,7 +15,7 @@ async function handleRequest(request) {
     return Response.redirect("https://milgradesec.github.io/paesadns/", 301)
   }
 
-  const newURL = "https://cloudflare-dns.com" + pathname + search
+  const newURL = "https://dns.adguard.com" + pathname + search
 
   const newRequest = new Request(newURL, {
     body: request.body,
