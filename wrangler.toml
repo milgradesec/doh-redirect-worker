@@ -1,8 +1,5 @@
 name = "doh-redirect"
 type = "javascript"
 
-account_id = ""
 workers_dev = true
-route = ""
-zone_id = "7164b7afd9967d0ac5e29f1321cf3031"
 compatibility_date = "2021-11-11"
