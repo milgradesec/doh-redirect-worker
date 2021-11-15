@@ -17,12 +17,17 @@ async function handleRequest(request) {
 
   // Use AdGuard as alternative endpoint to send all requests
   const newURL = "https://dns.adguard.com" + pathname + search
-
   const newRequest = new Request(newURL, {
     body: request.body,
     headers: request.headers,
     method: request.method,
     redirect: request.redirect
   })
-  return await fetch(newRequest)
+
+  return await fetch(newRequest, {
+    cf: {
+      cacheTtl: 300,
+      cacheEverything: true,
+    },
+  })
 }
