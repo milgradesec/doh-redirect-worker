@@ -26,7 +26,6 @@ async function handleRequest(request) {
 
   return await fetch(newRequest, {
     cf: {
-      cacheTtl: 300,
       cacheEverything: true,
     },
   })
