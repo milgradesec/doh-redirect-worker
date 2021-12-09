@@ -18,8 +18,8 @@ variable "zone_id" {
 }
 
 resource "cloudflare_worker_route" "doh-redirect-route" {
-  zone_id     = var.zone_id
-  pattern     = "https://dns.paesa.es/*"
+  zone_id = var.zone_id
+  pattern = "https://dns.paesa.es/*"
   # script_name = cloudflare_worker_script.doh-redirect.name
 }
 
