@@ -11,7 +11,7 @@ async function handleRequest(request) {
   }
 
   if (request.method !== "GET" || request.method !== "POST") {
-    return new Response("Method Not Allowed", { status: 405 })
+    return new Response(`Method ${request.method} not allowed.`, { status: 405 })
   }
 
   const newURL = `https://${DOH_ADDRESS}${pathname}${search}`
