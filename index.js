@@ -10,8 +10,7 @@ async function handleRequest(request) {
     return Response.redirect("https://milgradesec.github.io/paesadns/", 301)
   }
 
-  console.log(request.method)
-  if (!(request.method === "GET") || !(request.method === "POST")) {
+  if (request.method !== "GET" || request.method !== "POST") {
     return new Response("Method Not Allowed", { status: 405 })
   }
 
