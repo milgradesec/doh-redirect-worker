@@ -11,7 +11,7 @@ async function handleRequest(request) {
   }
 
   console.log(request.method)
-  if (!request.method.equals("GET") || !request.method.equals("POST")) {
+  if (!(request.method === "GET") || !(request.method === "POST")) {
     return new Response("Method Not Allowed", { status: 405 })
   }
 
