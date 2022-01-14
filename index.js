@@ -2,10 +2,6 @@ addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
 
-/**
- * Redirect request to other DoH endpoint
- * @param {Request} request
- */
 async function handleRequest(request) {
   const url = new URL(request.url)
   const { pathname, search } = url
@@ -16,7 +12,7 @@ async function handleRequest(request) {
   }
 
   // Use AdGuard as alternative endpoint to send all requests
-  const newURL = "https://dns.adguard.com" + pathname + search
+  const newURL = `https://dns.adguard.com${pathname}${search}`
   const newRequest = new Request(newURL, {
     body: request.body,
     headers: request.headers,
