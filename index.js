@@ -12,7 +12,7 @@ async function handleRequest(request) {
   }
 
   // Use AdGuard as alternative endpoint to send all requests
-  const newURL = `https://dns.adguard.com${pathname}${search}`
+  const newURL = `https://${DOH_ADDRESS}${pathname}${search}`
   const newRequest = new Request(newURL, {
     body: request.body,
     headers: request.headers,
@@ -20,9 +20,5 @@ async function handleRequest(request) {
     redirect: request.redirect
   })
 
-  return await fetch(newRequest, {
-    cf: {
-      cacheEverything: true,
-    },
-  })
+  return await fetch(newRequest)
 }

@@ -3,3 +3,6 @@ type = "javascript"
 
 workers_dev = true
 compatibility_date = "2021-11-11"
+
+[vars]
+DOH_ADDRESS = "dns.adguard.com"
