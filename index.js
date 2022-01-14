@@ -6,12 +6,12 @@ async function handleRequest(request) {
   const url = new URL(request.url)
   const { pathname, search } = url
 
-  // Redirect base url to the landing page at Github
+  // Redirect base url to the landing page at Github Pages.
   if (pathname == "/") {
     return Response.redirect("https://milgradesec.github.io/paesadns/", 301)
   }
 
-  // Use AdGuard as alternative endpoint to send all requests
+  // Use AdGuard as alternative endpoint to send all requests.
   const newURL = `https://${DOH_ADDRESS}${pathname}${search}`
   const newRequest = new Request(newURL, {
     body: request.body,
