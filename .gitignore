@@ -8,7 +8,4 @@ wasm-pack.log
 worker/
 node_modules/
 .cargo-ok
-
-# Terraform
-.terraform/
-terraform.tfstate*
+.vscode/
